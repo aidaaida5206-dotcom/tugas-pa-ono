@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Teh Idaman</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:linear-gradient(135deg,#1e3c72,#2a5298);
+    color:white;
+}
+
+header{
+    background:rgba(0,0,0,0.3);
+    padding:20px;
+    text-align:center;
+}
+
+header h1{
+    margin:0;
+}
+
+nav{
+    margin-top:10px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:10px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
+
+.hero{
+    text-align:center;
+    padding:60px 20px;
+}
+
+section{
+    padding:50px 20px;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+}
+
+.card-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.card{
+    background:rgba(255,255,255,0.1);
+    padding:20px;
+    border-radius:10px;
+    width:250px;
+    text-align:center;
+}
+
+.card img{
+    width:100%;
+    border-radius:10px;
+}
+
+.testimoni{
+    background:rgba(0,0,0,0.2);
+    padding:20px;
+    border-radius:10px;
+    margin:10px;
+}
+
+.gallery img{
+    width:200px;
+    border-radius:10px;
+    margin:10px;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:rgba(0,0,0,0.4);
+}
+
+.btn{
+    background:#ffcc00;
+    color:black;
+    padding:10px 20px;
+    border-radius:5px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Teh Idaman</h1>
+<p>Teh Segar Favorit Keluarga</p>
+
+<nav>
+<a href="#tentang">Tentang</a>
+<a href="#produk">Produk</a>
+<a href="#testimoni">Testimoni</a>
+<a href="#gallery">Gallery</a>
+<a href="#lokasi">Lokasi</a>
+<a href="#kontak">Kontak</a>
+</nav>
+
+</header>
+
+<div class="hero">
+<h2>Minuman Teh Segar & Berkualitas</h2>
+<p>Nikmati kesegaran teh pilihan setiap hari</p>
+<a class="btn" href="#produk">Lihat Produk</a>
+</div>
+
+
+<section id="tentang">
+<div class="container">
+
+<h2>Tentang Kami</h2>
+
+<p>
+Teh Idaman adalah minuman teh yang dibuat dari daun teh pilihan.
+Kami menyediakan berbagai varian rasa yang segar, nikmat,
+dan cocok dinikmati kapan saja.
+</p>
+
+</div>
+</section>
+
+
+<section id="produk">
+
+<div class="container">
+
+<h2>Produk Kami</h2>
+
+<div class="card-container">
+
+<?php
+
+$produk = [
+[
+"nama"=>"Teh Original",
+"harga"=>"Rp5.000",
+"gambar"=>"https://i.imgur.com/3ZQ3Z6D.jpg"
+],
+[
+"nama"=>"Teh Lemon",
+"harga"=>"Rp7.000",
+"gambar"=>"https://i.imgur.com/7QFZ6YF.jpg"
+],
+[
+"nama"=>"Teh Susu",
+"harga"=>"Rp8.000",
+"gambar"=>"https://i.imgur.com/qY5bF6G.jpg"
+]
+];
+
+foreach($produk as $p){
+
+echo "<div class='card'>";
+
+echo "<img src='".$p['gambar']."'>";
+
+echo "<h3>".$p['nama']."</h3>";
+
+echo "<p>".$p['harga']."</p>";
+
+echo "</div>";
+
+}
+
+?>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="testimoni">
+
+<div class="container">
+
+<h2>Testimoni</h2>
+
+<div class="testimoni">
+"Rasanya segar banget!" - Andi
+</div>
+
+<div class="testimoni">
+"Teh favorit keluarga saya." - Siti
+</div>
+
+<div class="testimoni">
+"Harganya murah tapi rasanya enak." - Budi
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="gallery">
+
+<div class="container">
+
+<h2>Gallery</h2>
+
+<div class="gallery">
+
+<img src="https://i.imgur.com/3ZQ3Z6D.jpg">
+<img src="https://i.imgur.com/7QFZ6YF.jpg">
+<img src="https://i.imgur.com/qY5bF6G.jpg">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="lokasi">
+
+<div class="container">
+
+<h2>Lokasi</h2>
+
+<p>Jl. Contoh No 10, Indonesia</p>
+
+<iframe
+width="100%"
+height="300"
+src="https://maps.google.com/maps?q=jakarta&t=&z=13&ie=UTF8&iwloc=&output=embed">
+</iframe>
+
+</div>
+
+</section>
+
+
+
+<section id="kontak">
+
+<div class="container">
+
+<h2>Kontak</h2>
+
+<p>WhatsApp : 08123456789</p>
+
+<p>Email : tehidaman@email.com</p>
+
+<a class="btn" href="https://wa.me/628123456789">
+Pesan Sekarang
+</a>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+<p>© <?php echo date("Y"); ?> Teh Idaman</p>
+
+</footer>
+
+</body>
